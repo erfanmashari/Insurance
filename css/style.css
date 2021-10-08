@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#body {
+    background-image: url("../img/background.jpg");
+    background-size: 110%;
+}
+
+#type-year {
+    margin-top: 15vw;
+}
+
+#fixed {
+    width: 25vw;
+    height: 5vw;
+    position: fixed;
+    top: 5vw;
+    right: 1vw;
+    display: flex;
+    align-items: center;
+    padding: 2vw;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#secound-form {
+    display: none;
+}
+
+#damage-check {
+    width: 48%;
+}
+
+#end-check {
+    width: 49%;
+}
+
+#expire-day {
+    width: 105%;
+}
+
+#damage-number {
+    display: none;
+}
+
+@media only screen and (max-width: 992px) {
+    #width {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 610px) {
+    #type-year {
+        width: 100%;
+    }
+}

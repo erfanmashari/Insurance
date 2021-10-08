@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=lalezar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>محاسبه بیمه خودرو</title>
+</head>
+
+<body id="body" dir="rtl" class="container d-flex justify-content-center align-items-center row-cols-auto">
+    <div id="type-year"
+        class="col-12 d-flex justify-content-center align-items-center row bg-white border-4 border border-dark">
+        <h1 id="h1" class="col-12 bg-dark text-white text-center p-2 mb-0">محاسبه آنلاین بیمه خودرو</h1>
+        <form id="form" class="col-12 row bg-white p-3">
+            <div class="input-group col-12 mt-3 mb-3">
+                <div id="width" class="col-lg-6 mb-4">
+                    <select name="auto-type" id="auto-type" class="col-12 form-select">
+                        <option value="" selected>نوع وسیله نقلیه</option>
+                        <option value="motorcycle">موتور سیکلت</option>
+                        <option value="light-cars">خودرو سواری</option>
+                        <option value="transport-cars">خودرو های بارکش</option>
+                        <option value="autowork">وسایل نقلیه اتو کار(استیشن، ون، مینی بوس و اتوبوس)</option>
+                        <option value="other">سایر</option>
+                    </select>
+                </div>
+                <div id="width" class="col-lg-6">
+                    <select name="car-type" id="car-type" class="col-12 form-select" disabled>
+                        <option id="selected-car" value="">نوع خودرو</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group col-12 mt-3 mb-3">
+                <div id="width" class="col-lg-6 mb-4">
+                    <select name="year-made" id="year-made" class="col-12 form-select">
+                        <option value="">سال ساخت وسیله نقلیه</option>
+                    </select>
+                </div>
+                <div id="width" class="col-lg-6">
+                    <select name="discount-year" id="discount-year" class="col-12 form-select" disabled>
+                        <option value="">تعداد سال های تخفیف عدم خسارت(در صورت نداشتن گزینه ای را انتخاب نکنید)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group col-12 mt-3 mb-3">
+                <div id="width" class="col-lg-6 mb-4">
+                    <div id="damage-check" class="col-12 d-flex align-items-center mx-0 px-0">
+                        <span class="col-9 mx-3">آیا خودرو دارای خسارت است؟</span>
+                        <input type="radio" name="is-damage" id="yes-damage">
+                        <label for="yes-damage" class="mx-2">بله</label>
+                        <input type="radio" name="is-damage" id="no-damage">
+                        <label for="no-damage" class="mx-2">خیر</label>
+                    </div>
+                </div>
+                <div id="width" class="col-lg-6">
+                    <select name="damage-type" id="damage-type" class="col-6 form-select" disabled>
+                        <option id="default-damage" value="" selected>نوع خسارت وارده</option>
+                        <option value="property">خسارت مالی</option>
+                        <option value="life">خسارت جانی</option>
+                        <option value="life&property">خسارت مالی و جانی</option>
+                    </select>
+                </div>
+            </div>
+            <div id="damage-number" class="input-group col-12 gap-5  mt-3 mb-3">
+                <div id="width" class="col-lg-6">
+                    <select name="property-number" id="property-number" class="col-6 form-select" disabled>
+                        <option id="selected-property" value="">تعداد خسارت مالی</option>
+                        <option value="1p">یک بار</option>
+                        <option value="2p">دو بار</option>
+                        <option value="3p">سه بار و بیشتر</option>
+                    </select>
+                </div>
+                <div id="width" class="col-lg-6">
+                    <select name="life-number" id="life-number" class="col-6 form-select" disabled>
+                        <option id="selected-life" value="">تعداد خسارت جانی</option>
+                        <option value="1l">یک بار</option>
+                        <option value="2l">دو بار</option>
+                        <option value="3l">سه بار و بیشتر</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group d-flex justify-content-center align-items-center col-12 mt-3 mb-1 p-2">
+                <div id="width" class="col-lg-6 mb-4">
+                    <button id="continue" type="submit" class="col-12 btn btn-dark fw-bold rounded-3">ادامه</button>
+                </div>
+                <div id="width" class="col-lg-6 mb-4">
+                    <button id="reset-button" class="col-12 btn btn-dark fw-bold rounded-3">بازنشانی</button>
+                </div>
+            </div>
+        </form>
+        <form id="secound-form" class="col-12 row bg-white p-3">
+            <div class="input-group row col-lg-12 mt-3 mb-3">
+                <div id="width" class="col-lg-6 mb-4">
+                    <div id="end-check" class="col-12 d-flex align-items-center mx-0 px-0">
+                        <span class="col-9 mx-3">آیا بیمه خودرو منقضی شده است؟</span>
+                        <input type="radio" name="is-end" id="yes-end">
+                        <label for="yes-end" class="mx-2">بله</label>
+                        <input type="radio" name="is-end" id="no-end">
+                        <label for="no-end" class="mx-2">خیر</label>
+                    </div>
+                </div>
+                <div id="width" class="col-lg-6">
+                    <input type="number" placeholder="تعداد روز منقضی شدن را وارد کنید" id="expire-day"
+                        class="col-12 form-control" disabled>
+                </div>
+            </div>
+            <div class="input-group col-12 mt-3 mb-3">
+                <div id="width" class="col-lg-6 mb-4">
+                    <select name="car-use" id="car-use" class="col-12 form-select">
+                        <option id="use-default" value="">در صورت داشتن کاربری خاص، آن را انتخاب کنید</option>
+                    </select>
+                </div>
+                <div id="width" class="col-lg-6">
+                    <select name="price-cover" id="price-cover" class="col-12 form-select">
+                        <option value="">میزان پوشش بیمه نامه</option>
+                        <option value="low">حداقل</option>
+                        <option value="mid">متوسط</option>
+                        <option value="high">حداکثر</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group col-12 mt-3 mb-3">
+                <div id="width" class="col-lg-6 mb-4">
+                    <select name="company" id="company" class="col-12 form-select">
+                        <option value="" selected>شرکت بیمه گذار</option>
+                        <option value="no-discount">شرکت بیمه 1(بدون تخفیف)</option>
+                        <option value="3discount">شرکت بیمه 2(3% تخفیف)</option>
+                        <option value="6discount">شرکت بیمه 3(5% تخفیف)</option>
+                    </select>
+                </div>
+                <div id="width" class="col-lg-6">
+                    <select name="insurance-time" id="insurance-time" class="col-12 form-select">
+                        <option value="" selected>مدت زمان بیمه</option>
+                        <option value="1month">1 ماه</option>
+                        <option value="3month">3 ماه</option>
+                        <option value="6month">6 ماه</option>
+                        <option value="1year">1 سال</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group d-flex justify-content-center align-items-center col-12 mt-3 mb-1 p-2">
+                <div id="width" class="col-lg-4 mb-3">
+                    <button id="calculate" type="click" class="col-12 btn btn-dark fw-bold rounded-3">محاسبه
+                        بیمه</button>
+                </div>
+                <div id="width" class="col-lg-4 mb-3">
+                    <button id="back" type="click" class="col-12 btn btn-dark fw-bold rounded-3">بازگشت به مرحله
+                        قبل</button>
+                </div>
+                <div id="width" class="col-lg-4 mb-3">
+                    <button id="reset-button2" class="col-12 btn btn-dark fw-bold rounded-3">بازنشانی</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <script src="js/insurance.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
