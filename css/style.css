@@ -6,6 +6,7 @@
 #body {
     background-image: url("../img/background.jpg");
     background-size: 110%;
+    background-repeat: no-repeat;
 }
 
 #type-year {
@@ -59,4 +60,10 @@
     #type-year {
         width: 100%;
     }
+}
+
+@media only screen and (max-width: 500px) {
+    #body {
+        background-position: center;
+        background-size: 200%;
 }
